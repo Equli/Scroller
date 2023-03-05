@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+section {
+    height: 100vh;
+    text-align: center;
+}
+
+p {
+    max-width: 70%;
+    margin: 20px auto;
+}
