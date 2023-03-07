@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Hello World');
-
     const rootElement = document.querySelector('#root');
     const sections = document.querySelectorAll('section');
     let currentSectionIndex = 0;
@@ -17,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         const direction = e.wheelDeltaY < 0 ? 1 : -1;
+        scroll(direction);
+    })
+    function scroll(direction) {
         if (direction === 1) {
             const isLastSection = currentSectionIndex === sections.length - 1;
             if (isLastSection) return;
@@ -25,11 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (firstSection) return;
         }
         currentSectionIndex = currentSectionIndex + direction;
+
+        scrollCurrentSection();
+    }
+    function scrollCurrentSection() {
         sections[currentSectionIndex].scrollIntoView({
             behavior: 'smooth',
             block: 'start',
         })
-    })
+    }
 })
 
 
