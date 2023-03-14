@@ -14,7 +14,7 @@ class Swiper {
         }
     }
     startTouch(e) {
-        e.preventDefault();
+        // e.preventDefault();
         this.initialX = e.touches[0].clientX;
         this.initialY = e.touches[0].clientY;
     }
@@ -27,9 +27,6 @@ class Swiper {
 
         const diffX = this.initialX - currentX;
         const diffY = this.initialY - currentY;
-
-        console.log(diffX);
-        console.log(diffY);
 
         if (Math.abs(diffX) > Math.abs(diffY)) {
             if (diffX > 0) {
@@ -48,3 +45,5 @@ class Swiper {
         this.initialX = null;
     }
 }
+
+new Swiper();
